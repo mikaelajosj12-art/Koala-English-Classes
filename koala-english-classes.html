@@ -1,0 +1,849 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>KOALA English Classes</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(
+135deg,
+#0f172a,
+#172554,
+#1d4ed8,
+#2563eb
+);
+
+min-height:100vh;
+color:white;
+overflow-x:hidden;
+}
+
+body::before{
+content:"";
+position:fixed;
+
+width:450px;
+height:450px;
+
+background:#facc15;
+
+border-radius:50%;
+
+top:-150px;
+right:-100px;
+
+filter:blur(140px);
+
+opacity:.25;
+
+z-index:-1;
+}
+
+body::after{
+content:"";
+position:fixed;
+
+width:400px;
+height:400px;
+
+background:#60a5fa;
+
+border-radius:50%;
+
+bottom:-150px;
+left:-100px;
+
+filter:blur(140px);
+
+opacity:.20;
+
+z-index:-1;
+}
+
+.hero{
+
+padding:60px 20px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+
+text-align:center;
+}
+
+.badge{
+
+background:#facc15;
+color:#111827;
+
+padding:12px 25px;
+
+border-radius:50px;
+
+font-weight:700;
+
+margin-bottom:25px;
+
+box-shadow:0 0 25px rgba(250,204,21,.4);
+
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.05);
+}
+
+100%{
+transform:scale(1);
+}
+
+}
+
+.logo{
+
+width:140px;
+height:140px;
+
+border-radius:50%;
+
+background:linear-gradient(
+135deg,
+#facc15,
+#f59e0b
+);
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-size:70px;
+
+box-shadow:0 0 40px rgba(250,204,21,.5);
+
+margin-bottom:25px;
+}
+
+.hero h1{
+
+font-size:4rem;
+
+font-weight:800;
+
+line-height:1.1;
+
+margin-bottom:15px;
+
+background:linear-gradient(
+90deg,
+#ffffff,
+#facc15
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero p{
+
+font-size:1.3rem;
+
+max-width:700px;
+
+opacity:.95;
+}
+
+.highlight{
+
+color:#facc15;
+font-weight:700;
+}
+
+.price-container{
+
+display:flex;
+
+gap:25px;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+margin-top:45px;
+}
+
+.price-card{
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(15px);
+
+border:1px solid rgba(255,255,255,.15);
+
+padding:25px;
+
+border-radius:30px;
+
+width:250px;
+
+transition:.3s;
+}
+
+.price-card:hover{
+
+transform:translateY(-8px);
+}
+
+.price{
+
+font-size:3rem;
+
+font-weight:800;
+
+color:#facc15;
+}
+
+.price-title{
+
+font-size:1.1rem;
+
+margin-top:10px;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:2.8rem;
+}
+
+.logo{
+width:110px;
+height:110px;
+font-size:55px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+
+<div class="badge">
+🔥 CUPO LIMITADO
+</div>
+
+<div class="logo">
+🐨
+</div>
+
+<h1>
+KOALA<br>
+English Classes
+</h1>
+
+<p>
+<span class="highlight">Domina Inglés</span>
+paso a paso con clases dinámicas,
+actividades prácticas y atención personalizada.
+</p>
+
+<div class="price-container">
+
+<div class="price-card">
+
+<div class="price">
+$100
+</div>
+
+<div class="price-title">
+2 HORAS POR CLASE
+</div>
+
+</div>
+
+<div class="price-card">
+
+<div class="price">
+$250
+</div>
+
+<div class="price-title">
+PROMOCIÓN 3 DÍAS
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- ========================= -->
+<!-- FORMULARIO INTERACTIVO -->
+<!-- ========================= -->
+
+<style>
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:20px;
+}
+
+.card{
+
+background:rgba(255,255,255,.10);
+
+backdrop-filter:blur(15px);
+
+border:1px solid rgba(255,255,255,.15);
+
+padding:30px;
+
+border-radius:30px;
+
+margin-bottom:25px;
+}
+
+.card h2{
+
+color:#facc15;
+
+margin-bottom:20px;
+
+font-size:1.8rem;
+}
+
+.options{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:15px;
+}
+
+.option{
+
+padding:15px 25px;
+
+border-radius:18px;
+
+background:rgba(255,255,255,.12);
+
+cursor:pointer;
+
+transition:.3s;
+
+font-weight:600;
+}
+
+.option:hover{
+
+transform:translateY(-4px);
+
+background:#facc15;
+
+color:#111827;
+}
+
+.option.active{
+
+background:#facc15;
+
+color:#111827;
+
+font-weight:700;
+
+box-shadow:0 0 20px rgba(250,204,21,.5);
+}
+
+.form-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:20px;
+}
+
+.input-group{
+
+display:flex;
+
+flex-direction:column;
+}
+
+.input-group label{
+
+margin-bottom:8px;
+
+font-weight:600;
+}
+
+.input-group input,
+.input-group textarea{
+
+padding:15px;
+
+border:none;
+
+border-radius:15px;
+
+font-size:1rem;
+
+outline:none;
+}
+
+.input-group textarea{
+
+height:120px;
+
+resize:none;
+}
+
+@media(max-width:768px){
+
+.options{
+justify-content:center;
+}
+
+}
+
+</style>
+
+<div class="container">
+
+<div class="card">
+
+<h2>🎂 Edad del Alumno</h2>
+
+<div class="options" id="edad">
+
+<div class="option">5 años</div>
+<div class="option">6 años</div>
+<div class="option">7 años</div>
+<div class="option">8 años</div>
+<div class="option">9 años</div>
+<div class="option">10 años</div>
+<div class="option">+10 años</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>📅 Selecciona los Días</h2>
+
+<div class="options" id="dias">
+
+<div class="option">Lunes</div>
+<div class="option">Martes</div>
+<div class="option">Miércoles</div>
+<div class="option">Jueves</div>
+<div class="option">Viernes</div>
+<div class="option">Sábado</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>⏰ Selecciona el Horario</h2>
+
+<div class="options" id="horario">
+
+<div class="option">9:00 AM - 11:00 AM</div>
+
+<div class="option">11:00 AM - 1:00 PM</div>
+
+<div class="option">1:00 PM - 3:00 PM</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>📝 Datos del Alumno</h2>
+
+<div class="form-grid">
+
+<div class="input-group">
+
+<label>Nombre del Alumno</label>
+
+<input
+type="text"
+id="nombre"
+placeholder="Escribe el nombre completo">
+
+</div>
+
+<div class="input-group">
+
+<label>Nombre del Tutor</label>
+
+<input
+type="text"
+id="tutor"
+placeholder="Nombre del padre o tutor">
+
+</div>
+
+<div class="input-group">
+
+<label>Teléfono</label>
+
+<input
+type="tel"
+id="telefono"
+placeholder="5512345678">
+
+</div>
+
+<div class="input-group">
+
+<label>Correo Electrónico</label>
+
+<input
+type="email"
+id="correo"
+placeholder="correo@ejemplo.com">
+
+</div>
+
+</div>
+
+<br>
+
+<div class="input-group">
+
+<label>Alergias u Observaciones</label>
+
+<textarea
+id="observaciones"
+placeholder="Información importante para el instructor">
+</textarea>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+let edadSeleccionada = "";
+let horarioSeleccionado = "";
+
+document
+.querySelectorAll("#edad .option")
+.forEach(opcion=>{
+
+opcion.addEventListener("click",()=>{
+
+document
+.querySelectorAll("#edad .option")
+.forEach(x=>x.classList.remove("active"));
+
+opcion.classList.add("active");
+
+edadSeleccionada = opcion.innerText;
+
+});
+
+});
+
+document
+.querySelectorAll("#horario .option")
+.forEach(opcion=>{
+
+opcion.addEventListener("click",()=>{
+
+document
+.querySelectorAll("#horario .option")
+.forEach(x=>x.classList.remove("active"));
+
+opcion.classList.add("active");
+
+horarioSeleccionado = opcion.innerText;
+
+});
+
+});
+
+document
+.querySelectorAll("#dias .option")
+.forEach(opcion=>{
+
+opcion.addEventListener("click",()=>{
+
+opcion.classList.toggle("active");
+
+});
+
+});
+
+</script>
+<!-- ========================= -->
+<!-- WHATSAPP + UBICACIÓN -->
+<!-- ========================= -->
+
+<style>
+
+.btn-whatsapp{
+
+width:100%;
+
+padding:20px;
+
+border:none;
+
+border-radius:20px;
+
+background:linear-gradient(
+135deg,
+#25D366,
+#128C7E
+);
+
+color:white;
+
+font-size:1.2rem;
+
+font-weight:700;
+
+cursor:pointer;
+
+transition:.3s;
+}
+
+.btn-whatsapp:hover{
+
+transform:translateY(-5px);
+
+box-shadow:0 0 25px rgba(37,211,102,.5);
+
+}
+
+.location-card{
+
+background:linear-gradient(
+135deg,
+#facc15,
+#f59e0b
+);
+
+padding:30px;
+
+border-radius:30px;
+
+margin-top:25px;
+
+color:#111827;
+
+font-weight:700;
+
+line-height:2;
+
+font-size:1.1rem;
+
+box-shadow:0 0 30px rgba(250,204,21,.4);
+
+}
+
+.footer{
+
+margin-top:40px;
+
+text-align:center;
+
+padding:30px;
+
+opacity:.8;
+}
+
+.whatsapp-float{
+
+position:fixed;
+
+bottom:25px;
+
+right:25px;
+
+width:70px;
+
+height:70px;
+
+border-radius:50%;
+
+background:#25D366;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:35px;
+
+text-decoration:none;
+
+box-shadow:0 0 25px rgba(37,211,102,.6);
+
+z-index:999;
+}
+
+.whatsapp-float:hover{
+
+transform:scale(1.1);
+
+}
+
+</style>
+
+<div class="container">
+
+<div class="card">
+
+<h2>📲 Finalizar Inscripción</h2>
+
+<p style="margin-bottom:20px;">
+Completa tus datos y envía la solicitud directamente por WhatsApp.
+</p>
+
+<button
+class="btn-whatsapp"
+onclick="enviarWhatsApp()">
+
+INSCRIBIRME POR WHATSAPP
+
+</button>
+
+</div>
+
+<div class="location-card">
+
+📍 <strong>Ubicación</strong><br>
+
+Fracc. Yaxnah 219 17A<br>
+
+🏪 Tienda Koala<br>
+
+📱 5575132629
+
+</div>
+
+<div class="footer">
+
+KOALA English Classes © 2025<br>
+Domina Inglés paso a paso
+
+</div>
+
+</div>
+
+<a
+href="https://wa.me/525575132629"
+class="whatsapp-float">
+
+💬
+
+</a>
+
+<script>
+
+function enviarWhatsApp(){
+
+const nombre =
+document.getElementById("nombre").value;
+
+const tutor =
+document.getElementById("tutor").value;
+
+const telefono =
+document.getElementById("telefono").value;
+
+const correo =
+document.getElementById("correo").value;
+
+const observaciones =
+document.getElementById("observaciones").value;
+
+let diasSeleccionados = [];
+
+document
+.querySelectorAll("#dias .active")
+.forEach(dia=>{
+
+diasSeleccionados.push(
+dia.innerText
+);
+
+});
+
+let mensaje =
+
+`Hola, deseo inscribir a un alumno en KOALA English Classes.
+
+   Alumno:
+${nombre}
+
+  Edad:
+${edadSeleccionada}
+
+  Días:
+${diasSeleccionados.join(", ")}
+
+  Horario:
+${horarioSeleccionado}
+
+  Tutor:
+${tutor}
+
+  Teléfono:
+${telefono}
+
+  Correo:
+${correo}
+
+  Observaciones:
+${observaciones}`;
+
+const url =
+
+"https://wa.me/525575132629?text=" +
+encodeURIComponent(mensaje);
+
+window.open(
+url,
+"_blank"
+);
+
+}
+
+</script>

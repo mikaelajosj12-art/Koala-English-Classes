@@ -223,6 +223,7 @@ font-weight:800;
 color:#facc15;
 }
 
+
 .promo-label{
 font-size:0.95rem;
 color:#facc15;
@@ -231,6 +232,33 @@ margin-bottom:8px;
 text-transform:uppercase;
 }
 
+.promo-title{
+font-size:1.2rem;
+color:#facc15;
+font-weight:800;
+margin-top:20px;
+cursor:pointer;
+letter-spacing:0.5px;
+}
+
+.promo-title:focus{
+outline:2px solid rgba(250,204,21,.25);
+outline-offset:4px;
+}
+
+.promo-details{
+color:rgba(255,255,255,.95);
+margin-top:8px;
+max-height:0;
+opacity:0;
+overflow:hidden;
+transition:all .3s ease;
+}
+
+.promo-details.show{
+max-height:200px;
+opacity:1;
+}
 .price-title{
 
 font-size:1.1rem;
@@ -277,6 +305,9 @@ English Classes
 paso a paso con clases dinámicas,
 actividades prácticas y atención personalizada.
 </p>
+   
+<div id="promo-title" class="promo-title" tabindex="0">PROMOCIÓN DE APERTURA</div>
+<div id="promo-details" class="promo-details">Inscríbete ahora y recibe condiciones especiales por lanzamiento.</div>
 
 <div class="price-container">
 
@@ -295,7 +326,6 @@ $100
 
 <div class="price-card">
 
-<div class="promo-label">PROMOCIÓN DE APERTURA</div>
 <div class="price">
 $250
 6 HRS X SEMANA
@@ -311,6 +341,23 @@ PROMOCIÓN 3 DÍAS
 </div>
 
 </section>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  const title = document.getElementById('promo-title');
+  const details = document.getElementById('promo-details');
+
+  function toggle(){
+    details.classList.toggle('show');
+    title.classList.toggle('active');
+  }
+
+  title.addEventListener('click', toggle);
+  title.addEventListener('keydown', function(e){
+    if(e.key === 'Enter' || e.key === ' ') toggle();
+  });
+});
+</script>
+
 <!-- ========================= -->
 <!-- FORMULARIO INTERACTIVO -->
 <!-- ========================= -->

@@ -1,0 +1,991 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>KOALA English Classes</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(
+135deg,
+#0a0e27 0%,
+#1a1f3a 25%,
+#2c3e7f 50%,
+#1a5490 100%
+);
+
+min-height:100vh;
+color:white;
+overflow-x:hidden;
+}
+
+body::before{
+content:"";
+position:fixed;
+
+width:450px;
+height:450px;
+
+background:#facc15;
+
+border-radius:50%;
+
+top:-150px;
+right:-100px;
+
+filter:blur(140px);
+
+opacity:.25;
+
+z-index:-1;
+}
+
+body::after{
+content:"";
+position:fixed;
+
+width:400px;
+height:400px;
+
+background:#60a5fa;
+
+border-radius:50%;
+
+bottom:-150px;
+left:-100px;
+
+filter:blur(140px);
+
+opacity:.20;
+
+z-index:-1;
+}
+
+.hero{
+
+padding:60px 20px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+
+text-align:center;
+}
+
+.badge{
+
+background:linear-gradient(
+135deg,
+#f4d03f,
+#e8b923
+);
+
+color:#1a2a4a;
+
+padding:14px 32px;
+
+border-radius:50px;
+
+font-weight:700;
+
+margin-bottom:25px;
+
+box-shadow:0 8px 25px rgba(244,208,63,.35), 0 2px 8px rgba(0,0,0,.2);
+
+animation:pulse 2s infinite;
+
+letter-spacing:0.5px;
+
+cursor:pointer;
+
+transition:.3s ease;
+}
+
+.badge:hover{
+transform:translateY(-2px);
+box-shadow:0 12px 35px rgba(244,208,63,.45), 0 4px 12px rgba(0,0,0,.3);
+}
+
+#promo-badge{
+margin-top:30px;
+}
+
+@keyframes pulse{
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.05);
+}
+
+100%{
+transform:scale(1);
+}
+
+}
+
+.logo{
+
+width:140px;
+height:140px;
+
+border-radius:50%;
+
+background:linear-gradient(
+135deg,
+#facc15,
+#f59e0b
+);
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-size:70px;
+
+box-shadow:0 0 40px rgba(250,204,21,.5);
+
+margin-bottom:25px;
+}
+
+.hero h1{
+
+font-size:4rem;
+
+font-weight:800;
+
+line-height:1.1;
+
+margin-bottom:15px;
+
+background:linear-gradient(
+90deg,
+#ffffff,
+#facc15
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero p{
+
+font-size:1.3rem;
+
+max-width:700px;
+
+opacity:.95;
+}
+
+.highlight{
+
+color:#facc15;
+font-weight:700;
+}
+
+.price-container{
+
+display:flex;
+
+gap:25px;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+margin-top:45px;
+}
+
+.price-card{
+
+background:linear-gradient(
+135deg,
+rgba(255,255,255,.08),
+rgba(255,255,255,.03)
+);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(244,208,63,.15);
+
+padding:35px 25px;
+
+border-radius:20px;
+
+width:250px;
+
+transition:.4s cubic-bezier(.4,.0,.2,1);
+
+box-shadow:0 8px 32px rgba(0,0,0,.15);
+}
+
+.price-card:hover{
+
+transform:translateY(-12px);
+
+border-color:rgba(244,208,63,.4);
+
+box-shadow:0 20px 40px rgba(244,208,63,.15), 0 8px 32px rgba(0,0,0,.2);
+}
+
+.price{
+
+font-size:3rem;
+
+font-weight:800;
+
+color:#f4d03f;
+
+margin-bottom:12px;
+
+letter-spacing:-1px;
+
+text-shadow:0 2px 10px rgba(0,0,0,.3);
+}
+
+.price-hours{
+
+font-size:1.5rem;
+
+font-weight:700;
+
+color:#ffffff;
+
+letter-spacing:0.05em;
+
+margin-bottom:12px;
+overflow:hidden;
+transition:all .3s ease;
+}
+
+.promo-details.show{
+max-height:200px;
+opacity:1;
+}
+
+.price-title{
+
+font-size:1.1rem;
+
+margin-top:10px;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:2.8rem;
+}
+
+.logo{
+width:110px;
+height:110px;
+font-size:55px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+
+<div class="badge">
+🔥 CUPO LIMITADO
+</div>
+
+<div class="logo">
+🐨
+</div>
+
+<h1>
+KOALA<br>
+English Classes
+</h1>
+
+<p>
+<span class="highlight">Domina Inglés</span>
+paso a paso con clases dinámicas,
+actividades prácticas y atención personalizada.
+</p>
+
+<div id="promo-badge" class="badge" role="button" tabindex="0">PROMOCIÓN DE APERTURA</div>
+<div id="promo-details" class="promo-details">Inscríbete ahora y recibe condiciones especiales por lanzamiento.</div>
+
+<div class="price-container">
+
+<div class="price-card">
+
+<div class="price">
+$100
+</div>
+
+<div class="price-title">
+2 HORAS POR CLASE
+</div>
+
+</div>
+
+<div class="price-card">
+
+<div class="price">
+$250
+</div>
+
+<div class="price-title">
+5 HRS X SEMANA
+</div>
+
+</div>
+
+</div>
+
+</section>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  const title = document.getElementById('promo-badge');
+  const details = document.getElementById('promo-details');
+
+  function toggle(){
+    details.classList.toggle('show');
+    title.classList.toggle('active');
+  }
+
+  title.addEventListener('click', toggle);
+  title.addEventListener('keydown', function(e){
+    if(e.key === 'Enter' || e.key === ' ') toggle();
+  });
+});
+</script>
+<!-- ========================= -->
+<!-- FORMULARIO INTERACTIVO -->
+<!-- ========================= -->
+
+<style>
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:20px;
+}
+
+.card{
+
+background:linear-gradient(
+135deg,
+rgba(255,255,255,.08),
+rgba(255,255,255,.03)
+);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(244,208,63,.1);
+
+padding:35px;
+
+border-radius:20px;
+
+margin-bottom:25px;
+
+box-shadow:0 8px 32px rgba(0,0,0,.1);
+
+transition:.3s ease;
+}
+
+.card:hover{
+
+border-color:rgba(244,208,63,.25);
+
+box-shadow:0 12px 40px rgba(0,0,0,.15);
+}
+
+.card h2{
+
+color:#f4d03f;
+
+margin-bottom:20px;
+
+font-size:1.8rem;
+
+letter-spacing:0.5px;
+
+text-shadow:0 2px 8px rgba(0,0,0,.2);
+}
+
+.options{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:15px;
+}
+
+.option{
+
+padding:15px 25px;
+
+border-radius:12px;
+
+background:rgba(255,255,255,.08);
+
+cursor:pointer;
+
+transition:.3s cubic-bezier(.4,.0,.2,1);
+
+font-weight:600;
+
+border:1px solid rgba(244,208,63,.1);
+
+color:rgba(255,255,255,.9);
+}
+
+.option:hover{
+
+transform:translateY(-3px);
+
+background:rgba(244,208,63,.15);
+
+color:#ffffff;
+
+border-color:rgba(244,208,63,.4);
+
+box-shadow:0 8px 20px rgba(244,208,63,.1);
+}
+
+.option.active{
+
+background:linear-gradient(135deg, #f4d03f, #e8b923);
+
+color:#1a2a4a;
+
+font-weight:700;
+
+box-shadow:0 8px 25px rgba(244,208,63,.35);
+
+border-color:#f4d03f;
+}
+
+.form-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:20px;
+}
+
+.input-group{
+
+display:flex;
+
+flex-direction:column;
+}
+
+.input-group label{
+
+margin-bottom:8px;
+
+font-weight:600;
+}
+
+.input-group input,
+.input-group textarea{
+
+padding:15px;
+
+border:1px solid rgba(244,208,63,.15);
+
+border-radius:12px;
+
+font-size:1rem;
+
+outline:none;
+
+background:rgba(255,255,255,.08);
+
+color:white;
+
+transition:.3s ease;
+
+backdrop-filter:blur(10px);
+}
+
+.input-group input:focus,
+.input-group textarea:focus{
+
+border-color:rgba(244,208,63,.4);
+
+background:rgba(255,255,255,.12);
+
+box-shadow:0 0 20px rgba(244,208,63,.15);
+}
+
+.input-group input::placeholder,
+.input-group textarea::placeholder{
+
+color:rgba(255,255,255,.5);
+}
+
+.input-group textarea{
+
+height:120px;
+
+resize:none;
+}
+
+@media(max-width:768px){
+
+.options{
+justify-content:center;
+}
+
+}
+
+</style>
+
+<div class="container">
+
+<div class="card">
+
+<h2>🎂 Edad del Alumno</h2>
+
+<div class="options" id="edad">
+
+<div class="option">5 años</div>
+<div class="option">6 años</div>
+<div class="option">7 años</div>
+<div class="option">8 años</div>
+<div class="option">9 años</div>
+<div class="option">10 años</div>
+<div class="option">+10 años</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>📅 Selecciona los Días</h2>
+
+<p style="margin-bottom:15px; opacity:0.9;">Selecciona uno o mas días</p>
+
+<div class="options" id="dias">
+
+<div class="option">Lunes</div>
+<div class="option">Martes</div>
+<div class="option">Miércoles</div>
+<div class="option">Jueves</div>
+<div class="option">Viernes</div>
+<div class="option">Sábado</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>⏰ Selecciona el Horario</h2>
+
+<div class="options" id="horario">
+
+<div class="option">9:00 AM - 11:00 AM</div>
+
+<div class="option">11:00 AM - 1:00 PM</div>
+
+<div class="option">1:00 PM - 3:00 PM</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>📝 Datos del Alumno</h2>
+
+<div class="form-grid">
+
+<div class="input-group">
+
+<label>Nombre del Alumno</label>
+
+<input
+type="text"
+id="nombre"
+placeholder="Escribe el nombre completo">
+
+</div>
+
+<div class="input-group">
+
+<label>Nombre del Tutor</label>
+
+<input
+type="text"
+id="tutor"
+placeholder="Nombre del padre o tutor">
+
+</div>
+
+<div class="input-group">
+
+<label>Teléfono</label>
+
+<input
+type="tel"
+id="telefono"
+placeholder="5512345678">
+
+</div>
+
+<div class="input-group">
+
+<label>Correo Electrónico</label>
+
+<input
+type="email"
+id="correo"
+placeholder="correo@ejemplo.com">
+
+</div>
+
+</div>
+
+<br>
+
+<div class="input-group">
+
+<label>Alergias u Observaciones</label>
+
+<textarea
+id="observaciones"
+placeholder="Información importante para el instructor">
+</textarea>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+let edadSeleccionada = "";
+let horarioSeleccionado = "";
+
+document
+.querySelectorAll("#edad .option")
+.forEach(opcion=>{
+
+opcion.addEventListener("click",()=>{
+
+document
+.querySelectorAll("#edad .option")
+.forEach(x=>x.classList.remove("active"));
+
+opcion.classList.add("active");
+
+edadSeleccionada = opcion.innerText;
+
+});
+
+});
+
+document
+.querySelectorAll("#horario .option")
+.forEach(opcion=>{
+
+opcion.addEventListener("click",()=>{
+
+document
+.querySelectorAll("#horario .option")
+.forEach(x=>x.classList.remove("active"));
+
+opcion.classList.add("active");
+
+horarioSeleccionado = opcion.innerText;
+
+});
+
+});
+
+document
+.querySelectorAll("#dias .option")
+.forEach(opcion=>{
+
+opcion.addEventListener("click",()=>{
+
+opcion.classList.toggle("active");
+
+});
+
+});
+
+</script>
+<!-- ========================= -->
+<!-- WHATSAPP + UBICACIÓN -->
+<!-- ========================= -->
+
+<style>
+
+.btn-whatsapp{
+
+width:100%;
+
+padding:18px;
+
+border:none;
+
+border-radius:15px;
+
+background:linear-gradient(
+135deg,
+#25D366,
+#0da853
+);
+
+color:white;
+
+font-size:1.2rem;
+
+font-weight:700;
+
+cursor:pointer;
+
+transition:.3s cubic-bezier(.4,.0,.2,1);
+
+box-shadow:0 8px 25px rgba(37,211,102,.25);
+
+letter-spacing:0.5px;
+}
+
+.btn-whatsapp:hover{
+
+transform:translateY(-3px);
+
+box-shadow:0 15px 40px rgba(37,211,102,.4);
+
+}
+
+.location-card{
+
+background:linear-gradient(
+135deg,
+#f4d03f,
+#e8b923
+);
+
+padding:35px;
+
+border-radius:20px;
+
+margin-top:25px;
+
+color:#1a2a4a;
+
+font-weight:700;
+
+line-height:2;
+
+font-size:1.1rem;
+
+box-shadow:0 15px 40px rgba(244,208,63,.25);
+
+border:1px solid rgba(255,255,255,.2);
+}
+
+.footer{
+
+margin-top:40px;
+
+text-align:center;
+
+padding:30px;
+
+opacity:.8;
+}
+
+.whatsapp-float{
+
+position:fixed;
+
+bottom:25px;
+
+right:25px;
+
+width:70px;
+
+height:70px;
+
+border-radius:50%;
+
+background:linear-gradient(
+135deg,
+#25D366,
+#0da853
+);
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:35px;
+
+text-decoration:none;
+
+box-shadow:0 8px 25px rgba(37,211,102,.35);
+
+z-index:999;
+
+transition:.3s cubic-bezier(.4,.0,.2,1);
+}
+
+.whatsapp-float:hover{
+
+transform:scale(1.15);
+
+box-shadow:0 12px 35px rgba(37,211,102,.5);
+}
+
+</style>
+
+<div class="container">
+
+<div class="card">
+
+<h2>📲 Finalizar Inscripción</h2>
+
+<p style="margin-bottom:20px;">
+Completa tus datos y envía la solicitud directamente por WhatsApp.
+</p>
+
+<button
+class="btn-whatsapp"
+onclick="enviarWhatsApp()">
+
+INSCRIBIRME POR WHATSAPP
+
+</button>
+
+</div>
+
+<div class="location-card">
+
+📍 <strong>Ubicación</strong><br>
+
+Fracc. Yaxnah<br>
+
+🏪 Informes Tienda Koala<br>
+
+📱 5575132629
+
+</div>
+
+<div class="footer">
+
+KOALA English Classes © 2025<br>
+Domina Inglés paso a paso
+
+</div>
+
+</div>
+
+<a
+href="https://wa.me/525575132629"
+class="whatsapp-float">
+
+💬
+
+</a>
+
+<script>
+
+function enviarWhatsApp(){
+
+const nombre =
+document.getElementById("nombre").value;
+
+const tutor =
+document.getElementById("tutor").value;
+
+const telefono =
+document.getElementById("telefono").value;
+
+const correo =
+document.getElementById("correo").value;
+
+const observaciones =
+document.getElementById("observaciones").value;
+
+let diasSeleccionados = [];
+
+document
+.querySelectorAll("#dias .active")
+.forEach(dia=>{
+
+diasSeleccionados.push(
+dia.innerText
+);
+
+});
+
+let mensaje =
+
+`Hola, deseo inscribir a un alumno en KOALA English Classes.
+
+   Alumno:
+${nombre}
+
+  Edad:
+${edadSeleccionada}
+
+  Días:
+${diasSeleccionados.join(", ")}
+
+  Horario:
+${horarioSeleccionado}
+
+  Tutor:
+${tutor}
+
+  Teléfono:
+${telefono}
+
+  Correo:
+${correo}
+
+  Observaciones:
+${observaciones}`;
+
+const url =
+
+"https://wa.me/525575132629?text=" +
+encodeURIComponent(mensaje);
+
+window.open(
+url,
+"_blank"
+);
+
+}
+
+</script>

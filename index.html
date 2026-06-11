@@ -223,8 +223,7 @@ font-weight:800;
 color:#facc15;
 }
 
-
-.promo-label{
+   .promo-label{
 font-size:0.95rem;
 color:#facc15;
 font-weight:700;
@@ -232,19 +231,7 @@ margin-bottom:8px;
 text-transform:uppercase;
 }
 
-.promo-title{
-font-size:1.2rem;
-color:#facc15;
-font-weight:800;
-margin-top:20px;
-cursor:pointer;
-letter-spacing:0.5px;
-}
-
-.promo-title:focus{
-outline:2px solid rgba(250,204,21,.25);
-outline-offset:4px;
-}
+/* promo-title replaced by badge-styled button */
 
 .promo-details{
 color:rgba(255,255,255,.95);
@@ -259,6 +246,7 @@ transition:all .3s ease;
 max-height:200px;
 opacity:1;
 }
+
 .price-title{
 
 font-size:1.1rem;
@@ -306,7 +294,7 @@ paso a paso con clases dinámicas,
 actividades prácticas y atención personalizada.
 </p>
    
-<div id="promo-title" class="promo-title" tabindex="0">PROMOCIÓN DE APERTURA</div>
+<div id="promo-badge" class="badge" role="button" tabindex="0">PROMOCIÓN DE APERTURA</div>
 <div id="promo-details" class="promo-details">Inscríbete ahora y recibe condiciones especiales por lanzamiento.</div>
 
 <div class="price-container">
@@ -356,14 +344,14 @@ document.addEventListener('DOMContentLoaded', function(){
     if(e.key === 'Enter' || e.key === ' ') toggle();
   });
 });
-</script>
 
+</script>
 <!-- ========================= -->
 <!-- FORMULARIO INTERACTIVO -->
 <!-- ========================= -->
 
-<style>
 
+<style>
 .container{
 max-width:1200px;
 margin:auto;
